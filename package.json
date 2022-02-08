@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "Easly setup react redux",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+ 
   "repository": {
     "type": "git",
     "url": "git+https://github.com/binark/easy-react-redux.git"
@@ -18,10 +16,14 @@
     "useEasySelector",
     "useEasyDispatch"
   ],
-  "author": "armelknyobe@gmail.com",
+  "author": "kenany (armelknyobe@gmail.com)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/binark/easy-react-redux/issues"
   },
-  "homepage": "https://github.com/binark/easy-react-redux#readme"
+  "homepage": "https://github.com/binark/easy-react-redux#readme",
+  "dependencies": {
+    "react-redux": "^7.2.6",
+    "redux": "^4.1.2"
+  }
 }
