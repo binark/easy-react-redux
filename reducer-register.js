@@ -1,4 +1,4 @@
-import { combineReducers } from "redux";
+import { combineReducers, createStore } from "redux";
 
 /**
  * 
@@ -81,4 +81,16 @@ if (initialState) {
     return combineReducers(mapper)
 }
 
-export default register;
+/**
+ * 
+ * @param {{[key: string]: { actions: {[key: string]: Function} | Function[], caseSisitive: boolean, initialState: any}}} options 
+ * @returns 
+ */
+ const buildStore = (options) => {
+
+    const registeredReduces =  register(options);
+
+    return createStore(registeredReduces, {});
+}
+
+export default buildStore;
