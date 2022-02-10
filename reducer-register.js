@@ -63,16 +63,20 @@ if (initialState) {
 
 /**
  * 
- * @param {{key: string, actions: {[key: string]: Function} | Function[], caseSisitive: boolean, initialState: any}} param0 
+ * @param {{[key: string]: { actions: {[key: string]: Function} | Function[], caseSisitive: boolean, initialState: any}}} options 
  * @returns 
  */
-const register = ({key, actions, caseSisitive = false, initialState}) => {
-    
-    const reducer = builder(actions, caseSisitive, initialState);
+ const register = (options) => {
 
     const mapper = {};
 
-    mapper[key] = reducer
+    for (const key in options) {
+
+        const {actions, caseSisitive, initialState} = options[key];
+        const reducer = builder(actions, caseSisitive, initialState);
+        mapper[key] = reducer;
+        
+    }
 
     return combineReducers(mapper)
 }

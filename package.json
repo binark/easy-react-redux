@@ -1,9 +1,8 @@
 {
-  "name": "easy-react-redux",
+  "name": "@kenany/binark-easy-react-redux",
   "version": "1.0.0",
   "description": "Easly setup react redux",
   "main": "index.js",
- 
   "repository": {
     "type": "git",
     "url": "git+https://github.com/binark/easy-react-redux.git"
