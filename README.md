@@ -36,7 +36,7 @@ export default {incremente, decrement};
 import actions from './actions.js';
 import { easyStore } from '@binark/eady-react-redux'
 
-export default easyStore({'click', {actions}});
+export default easyStore({'click': {actions}});
 ```
 > index.js
 ```jsx
