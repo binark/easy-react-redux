@@ -1,5 +1,5 @@
 {
-  "name": "@kenany/binark-easy-react-redux",
+  "name": "@binark/easy-react-redux",
   "version": "1.0.0",
   "description": "Easly setup react redux",
   "main": "index.js",

@@ -91,3 +91,79 @@ const Home = () => {
 
 export default Home;
 ```
+### What about initial state ?
+
+There is two ways to define initialstate
+
+* inside easyStore function
+```
+easyStore({key: {actions: actions, initialState: myState}})
+```
+
+* Inside actions file
+
+> actions.js
+
+```js
+const initialState = () => {
+    return {} // your state
+}
+
+...
+
+export default {initialState, ...}
+```
+
+## API
+
+##### easyStore
+
+* syntaxe
+
+```js
+easyStore(options)
+```
+* paramaters
+    * **options**: {key: {actions, initialState, caseSisitive}}
+
+        * **_key_**: string "The reducer key that selector will use"
+        * **_actions_**: Array | Object "the set of actions for that reduce"
+        * **_initialState_**: any default {} "The initial state"
+        * **_caseSisitive_**: boolean default false "by default, you can define action like **increMente** and dispatch it like **dispath('incremente', data)**
+    
+* return
+Return the redux store
+##### useEasySelector
+
+* syntaxe
+
+```js
+useEasySelector(key)
+```
+
+* parameters
+    * **key** : string, It is the reducer key defined in easyStore function
+* return
+Return the state
+* example
+```js
+const state = useEasySelector('my_key');
+console.log(state.foo)
+```
+
+##### useEasyDispatch
+
+* syntaxe
+
+```js
+useEasyDispatch(actionName, data)
+```
+
+* parameters
+    * **actionName** : string, It is the reducer key defined in easyStore function
+    * **data** : any, The data to update the state
+* example
+```js
+const dispath = useEasyDispatch();
+dispath('my_action_name", foo);
+```
