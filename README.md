@@ -5,7 +5,7 @@
 ## Install
 
 ```bash
-npm install --save @binark/eady-react-redux
+npm install --save @binark/easy-react-redux
 ```
 
 ## Usage
