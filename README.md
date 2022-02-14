@@ -16,7 +16,7 @@ npm install --save @binark/easy-react-redux
  * @param 'state' the redux state
  * @param 'data' the data to update the state. for this case it is {count: number}
  **/
-const incremente = (state, data) => {
+const increments = (state, data) => {
     retunr {...state, count: state.count + data}
 }
 
@@ -24,17 +24,17 @@ const incremente = (state, data) => {
  * @param 'state' the redux state
  * @param 'data' the data to update the state. for this case it is {count: number}
  **/
-const decremente = (state, data) => {
+const decrements = (state, data) => {
     retunr {...state, count: state.count - data}
 }
 
-export default {incremente, decrement};
+export default {increments, decrements};
 ```
 
 > store.js
 ```js
 import actions from './actions.js';
-import { easyStore } from '@binark/eady-react-redux'
+import { easyStore } from '@binark/easy-react-redux'
 
 export default easyStore({'click': {actions}});
 ```
@@ -59,7 +59,7 @@ ReactDOM.render(
 > component/Header.jsx (use the easy selector)
 ```jsx
 import React from 'react';
-import { useEasyReduxSelector } from '@kenany/binark-easy-react-redux';
+import { useEasyReduxSelector } from '@binark/easy-react-redux';
 
 const Header = () => {
     const {count} = useEasyReduxSelector('click');
@@ -75,16 +75,16 @@ export default Header;
 > component/Home.jsx (use the easy dispath)
 ```jsx
 import React from 'react';
-import { useEasyReduxDispatch } from '@kenany/binark-easy-react-redux';
+import { useEasyReduxDispatch } from '@binark/easy-react-redux';
 
 const Home = () => {
     const dispatch = useEasyReduxDispatch()
     return (
         <div>
-            <button onClick={()=>{dispatch('incremente', 1)}}>Increment 1</button>
-            <button onClick={()=>{dispatch('incremente', 3)}}>Increment 3</button>
-            <button onClick={()=>{dispatch('decremente', 1)}}>Decrement 1</button>
-            <button onClick={()=>{dispatch('decremente', 2)}}>Decrement 2</button>
+            <button onClick={()=>{dispatch('increments', 1)}}>Increments 1</button>
+            <button onClick={()=>{dispatch('increments', 3)}}>Increments 3</button>
+            <button onClick={()=>{dispatch('decrements', 1)}}>Decrements 1</button>
+            <button onClick={()=>{dispatch('decrements', 2)}}>Decrements 2</button>
         </div>
     );
 };
