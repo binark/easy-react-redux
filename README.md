@@ -16,7 +16,7 @@ npm install --save @binark/easy-react-redux
  * @param 'state' the redux state
  * @param 'data' the data to update the state. for this case it is {count: number}
  **/
-const increments = (state, data) => {
+const increment = (state, data) => {
     retunr {...state, count: state.count + data}
 }
 
@@ -24,11 +24,11 @@ const increments = (state, data) => {
  * @param 'state' the redux state
  * @param 'data' the data to update the state. for this case it is {count: number}
  **/
-const decrements = (state, data) => {
+const decrement = (state, data) => {
     retunr {...state, count: state.count - data}
 }
 
-export default {increments, decrements};
+export default {increment, decrement};
 ```
 
 > store.js
@@ -81,10 +81,10 @@ const Home = () => {
     const dispatch = useEasyReduxDispatch()
     return (
         <div>
-            <button onClick={()=>{dispatch('increments', 1)}}>Increments 1</button>
-            <button onClick={()=>{dispatch('increments', 3)}}>Increments 3</button>
-            <button onClick={()=>{dispatch('decrements', 1)}}>Decrements 1</button>
-            <button onClick={()=>{dispatch('decrements', 2)}}>Decrements 2</button>
+            <button onClick={()=>{dispatch('increment', 1)}}>Increments 1</button>
+            <button onClick={()=>{dispatch('increment', 3)}}>Increments 3</button>
+            <button onClick={()=>{dispatch('decrement', 1)}}>Decrements 1</button>
+            <button onClick={()=>{dispatch('decrement', 2)}}>Decrements 2</button>
         </div>
     );
 };
